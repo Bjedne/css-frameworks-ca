@@ -1,24 +1,30 @@
-// 1. Get posts
-// 2. Display posts
-
 import { doFetch } from "../js/api/auth/doFetch.mjs";
 import { POSTS_URL } from "../js/api/constants.mjs";
+import { generateSinglePostHTML } from "../js/generateSinglePostHTML.mjs";
 
-const generateSinglePostHTML = () => {
-
-};
+var POST_HAS_IMAGE = false;
 
 function displayPosts(posts){
-    console.log(posts);
-    posts.forEach((post, index) => {
+    const postsDisplayContainer = document.querySelector("#posts-display-container");
+    postsDisplayContainer.textContent = "";
+    posts
+        .filter((post) => {
+            if (POST_HAS_IMAGE) {
+                if (post.media) {
+                    return true;
+                }   
+            } else {
+                return true;
+            }
+        }).forEach((post) => {
         const postHTML = generateSinglePostHTML(post);
+        postsDisplayContainer.appendChild(postHTML);
     })
 };
 
 async function getPosts() {
-    console.log("getting posts");
     const posts = await doFetch(POSTS_URL, true);
-    
+    console.log(posts)
     if(posts) {
         displayPosts(posts);
     }
@@ -29,4 +35,3 @@ function main() {
 }
 
 main();
-

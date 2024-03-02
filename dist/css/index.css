@@ -7,6 +7,15 @@
   max-height: 100px;
 }
 
+.container {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+p {
+  max-width: 100%;
+}
+
 .hidden {
   display: none;
 }
