@@ -7,6 +7,7 @@ let POST_HAS_REACTION = false;
 
 function displayPosts(posts){
     const postsDisplayContainer = document.querySelector("#posts-display-container");
+    const searchInput = document.getElementById("searchBar").value.toLowerCase();
     postsDisplayContainer.textContent = "";
     posts
         .filter((post) => {
@@ -27,6 +28,11 @@ function displayPosts(posts){
                 return true;
             }
         })
+        .filter((post) => {
+            const title = post.title.toLowerCase();
+            const content = post.body.toLowerCase();
+            return title.includes(searchInput) || content.includes(searchInput);
+        })
         .forEach((post) => {
         const postHTML = generateSinglePostHTML(post);
         postsDisplayContainer.appendChild(postHTML);
@@ -44,17 +50,20 @@ async function getPosts() {
 function main() {
     getPosts();
 
-    const imageCheckbox = document.getElementById('imageCheckbox');
-    const reactionCheckbox = document.getElementById('reactionCheckbox');
+    const imageCheckbox = document.getElementById("imageCheckbox");
+    const reactionCheckbox = document.getElementById("reactionCheckbox");
+    const searchBar = document.getElementById("searchBar");
 
-    imageCheckbox.addEventListener('change', updatePostsDisplay);
-    reactionCheckbox.addEventListener('change', updatePostsDisplay);
+    imageCheckbox.addEventListener("change", updatePostsDisplay);
+    reactionCheckbox.addEventListener("change", updatePostsDisplay);
+    searchBar.addEventListener("input", updatePostsDisplay);
 }
 
 function updatePostsDisplay() {
-    POST_HAS_IMAGE = document.getElementById('imageCheckbox').checked;
-    POST_HAS_REACTION = document.getElementById('reactionCheckbox').checked;
+    POST_HAS_IMAGE = document.getElementById("imageCheckbox").checked;
+    POST_HAS_REACTION = document.getElementById("reactionCheckbox").checked;
     getPosts();
 }
 
 main();
+
