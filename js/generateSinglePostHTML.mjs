@@ -3,10 +3,11 @@ export const generateSinglePostHTML = (post) => {
     postContainer.className = "bg-white p-4 rounded-4 col-11 col-md-8 mx-auto mt-3 align-items-center d-flex flex-column container"
 
     /* trying to add author, date and avatar? */
-    
 
+   /*  const postLink = document.createElement("a");
+    postLink.href = `/post/?id=${post.id}`; */
     const postLink = document.createElement("a");
-    postLink.href = `/post/?id=${post.id}`;
+    postLink.href = `/post/edit/?id=${post.id}`;
     
     const postTitle = document.createElement("h3");
     postTitle.textContent = post.title;

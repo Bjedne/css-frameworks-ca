@@ -1,5 +1,6 @@
 import { doFetch } from "../js/api/auth/doFetch.mjs";
 import { POSTS_URL } from "../js/api/constants.mjs";
+import { createPost } from "../js/api/posts/create.mjs";
 import { generateSinglePostHTML } from "../js/generateSinglePostHTML.mjs";
 
 let POST_HAS_IMAGE = false;
@@ -66,4 +67,32 @@ function updatePostsDisplay() {
 }
 
 main();
+
+function reloadPage() {
+    location.reload
+}
+
+const postTitle = document.querySelector("#postTitle")
+const postBody = document.querySelector("#postBody")
+const postMedia = document.querySelector("#formFile");
+const createPostBtn = document.querySelector("#createPostBtn");
+
+createPostBtn.addEventListener("click", () => {
+    if (!postTitle.value) {
+        event.preventDefault()
+        alert("Post must include a title!");
+
+    } else {
+        createPost({
+            title: postTitle.value,
+            body: postBody.value,
+            media: postMedia.value
+        })
+        alert("Post successfully created!")
+        window.location.reload()
+    }
+});
+
+
+
 

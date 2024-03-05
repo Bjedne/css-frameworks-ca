@@ -2,6 +2,10 @@ import { authFetch } from "../auth/handleAuth.mjs";
 import { POSTS_URL } from "../constants.mjs";
 
 export async function updatePost(postData) {
+    if (!postData.id) {
+        throw new Error("Update requires a postID");
+    }
+
     const updatePostUrl = `${POSTS_URL}/${postData.id}`;
 
     const response = await authFetch(updatePostUrl, {
@@ -9,5 +13,7 @@ export async function updatePost(postData) {
         body: JSON.stringify(postData)
     })
 
+    
     return await response.json()
+    
 } 
