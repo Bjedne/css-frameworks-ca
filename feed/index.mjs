@@ -41,7 +41,7 @@ function displayPosts(posts){
 };
 
 async function getPosts() {
-    const posts = await doFetch(POSTS_URL, true);
+    const posts = await doFetch(`${POSTS_URL}/?_author=true`, true);
     console.log(posts)
     if(posts) {
         displayPosts(posts);
@@ -67,10 +67,6 @@ function updatePostsDisplay() {
 }
 
 main();
-
-function reloadPage() {
-    location.reload
-}
 
 const postTitle = document.querySelector("#postTitle")
 const postBody = document.querySelector("#postBody")

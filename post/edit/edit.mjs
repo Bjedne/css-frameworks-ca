@@ -2,8 +2,7 @@ import { authFetch } from "../../js/api/auth/handleAuth.mjs";
 import { POSTS_URL } from "../../js/api/constants.mjs";
 
 async function getPostById(postId) {
-  const response = await authFetch(`${POSTS_URL}/${postId}`); // Use POSTS_URL instead of apiEndpoint
-
+  const response = await authFetch(`${POSTS_URL}/${postId}`);
   return response.json();
 }
 
@@ -44,6 +43,9 @@ async function handleFormSubmit(event) {
     const updatedPost = await updatePost(postId, updatedData);
     console.log('Post updated successfully:', updatedPost);
     alert('Post updated successfully!');
+
+    window.location.href = `/post/?id=${postId}`;
+
   } catch (error) {
     console.error('Error updating post:', error.message);
     alert('Failed to update post. Please try again.');
@@ -69,5 +71,3 @@ main();
 
 // Add form submission event listener
 document.getElementById('editPostForm').addEventListener('submit', handleFormSubmit);
-
-console.log(populateForm)

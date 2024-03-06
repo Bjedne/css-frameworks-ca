@@ -28,3 +28,4 @@ async function loginUser(email, password) {
         
     } else new Error("No access token provided")
 }
+

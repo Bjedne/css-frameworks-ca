@@ -13,6 +13,7 @@ export async function doFetch(url, isAuth = false, options = {}) {
         const combinedOptions = { headers, ...options };
 
         const response = await fetch(url, combinedOptions);
+    
         const json = await response.json();
         return json;
     }catch(error) {
@@ -21,3 +22,4 @@ export async function doFetch(url, isAuth = false, options = {}) {
         /*  */
     }
 }
+
