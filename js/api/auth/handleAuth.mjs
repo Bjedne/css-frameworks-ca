@@ -2,6 +2,10 @@ export const addAuthToken = (token) => {
 localStorage.setItem("access-token", token);
 };
 
+export const addUserName = (name) => {
+    localStorage.setItem("name", name);
+}
+
 export const getAuthToken = () => {
     const accessToken = localStorage.getItem("access-token");
     return accessToken;
@@ -20,4 +24,3 @@ export async function authFetch(url, options) {
         headers: headers()
     })
 }
-

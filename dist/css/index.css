@@ -16,6 +16,10 @@ p {
   max-width: 100%;
 }
 
+.black-text {
+  color: black;
+}
+
 .hidden {
   display: none;
 }

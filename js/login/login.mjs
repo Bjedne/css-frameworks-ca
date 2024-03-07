@@ -1,6 +1,6 @@
 import { LOGIN_URL } from "/js/api/constants.mjs";
 import { doFetch } from "../api/auth/doFetch.mjs";
-import { addAuthToken } from "../api/auth/handleAuth.mjs";
+import { addAuthToken, addUserName } from "../api/auth/handleAuth.mjs";
 
 const loginForm = document.querySelector("#login");
 
@@ -19,9 +19,10 @@ async function loginUser(email, password) {
             password,
         }), 
     });
-    const {accessToken} = response;
+    const {accessToken, name} = response;
     if (accessToken) {
         addAuthToken(accessToken);
+        addUserName(name);
         setTimeout(() => {
             window.location.href = "/feed/";
         }, 1000)
