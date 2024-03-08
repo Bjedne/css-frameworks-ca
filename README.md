@@ -9,6 +9,7 @@ For this project so far I've used:
 
 - HTML
 - Bootstrap
+- Javascript
 - Sass
 
 ## Getting Started
