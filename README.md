@@ -3,6 +3,14 @@
 ![image](https://github.com/Bjedne/runeterra5e/assets/126247097/435bf986-fd53-4d2e-9a2e-19780f3ac008)
 MiniTalks is a social platform intended for users with a particular interest for miniature painting to connect, share creations and get inspired.
 
+This project intends for the user to:
+- Register an account using either a noroff.no or a stud.noroff.no as the email address.
+- Log in to the site with the registered user.
+- View other posts through a feed page, see who the author is and how many reactions it has gotten.
+- Search and filter posts.
+- View specific posts.
+- Create, edit and delete their own posts.
+  
 ## Built With
 
 For this project so far I've used:
@@ -10,7 +18,7 @@ For this project so far I've used:
 - HTML
 - Bootstrap
 - Javascript
-- Sass
+- SASS/SCSS
 
 ## Getting Started
 
@@ -18,11 +26,13 @@ For this project so far I've used:
 
 1. Clone the repo from here:
 
-https://github.com/Bjedne/css-frameworks-ca.git
+[https://github.com/Bjedne/css-frameworks-ca.git](https://github.com/Bjedne/css-frameworks-ca.git)
 
 ## Running 
 
-To run the site I would recommend opening the code it VSCode and use the Live Server extension.
+Run the following command in terminal:
+
+> npm run dev
 
 
 ## Contact
