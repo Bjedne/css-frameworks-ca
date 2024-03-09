@@ -1,3 +1,4 @@
+// Code alternates state of the form when user swaps between logging in and registering
 const noAccBtn = document.getElementById("register-btn-access")
 const goToLogin = document.getElementById("login-btn-access")
 

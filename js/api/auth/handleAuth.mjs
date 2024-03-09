@@ -1,7 +1,7 @@
+// Adds token and name to Local Storage
 export const addAuthToken = (token) => {
 localStorage.setItem("access-token", token);
 };
-
 export const addUserName = (name) => {
     localStorage.setItem("name", name);
 }

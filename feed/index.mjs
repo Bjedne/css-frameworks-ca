@@ -6,6 +6,10 @@ import { generateSinglePostHTML } from "../js/generateSinglePostHTML.mjs";
 let POST_HAS_IMAGE = false;
 let POST_HAS_REACTION = false;
 
+/**
+ * Displays a filtered list of posts in the specified HTML container based on the provided posts array,
+ * search input, and optional filters for post content (image and reactions).
+ */
 function displayPosts(posts){
     const postsDisplayContainer = document.querySelector("#posts-display-container");
     const searchInput = document.getElementById("searchBar").value.toLowerCase();
@@ -42,12 +46,12 @@ function displayPosts(posts){
 
 async function getPosts() {
     const posts = await doFetch(`${POSTS_URL}/?_author=true`, true);
-    console.log(posts)
     if(posts) {
         displayPosts(posts);
     }
 }
 
+// Function for adding checkboxes and a searchbar
 function main() {
     getPosts();
 
@@ -68,6 +72,7 @@ function updatePostsDisplay() {
 
 main();
 
+// Adds functionality to the create post form
 const postTitle = document.querySelector("#postTitle")
 const postBody = document.querySelector("#postBody")
 const postMedia = document.querySelector("#formFile");

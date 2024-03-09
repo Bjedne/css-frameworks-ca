@@ -1,3 +1,7 @@
+/**
+ * Generates HTML content for a post containing post author, title, body, image, number of likes and comments and links to a specific post.
+ * @param {*} post 
+ */
 export const generateSinglePostHTML = (post) => {
     // Adds parent to contain everything
     const postContainer = document.createElement("div");

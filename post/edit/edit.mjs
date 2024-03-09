@@ -1,6 +1,7 @@
 import { authFetch } from "../../js/api/auth/handleAuth.mjs";
 import { POSTS_URL } from "../../js/api/constants.mjs";
 
+// Function to fetch id form to add to query parameters
 async function getPostById(postId) {
   const response = await authFetch(`${POSTS_URL}/${postId}`);
   return response.json();
@@ -38,10 +39,9 @@ async function handleFormSubmit(event) {
     media: document.getElementById("formFile").value,
   };
 
+  // Update the post with the modified data
   try {
-    // Update the post with the modified data
     const updatedPost = await updatePost(postId, updatedData);
-    console.log('Post updated successfully:', updatedPost);
     alert('Post updated successfully!');
 
     window.location.href = `/post/?id=${postId}`;
@@ -57,17 +57,13 @@ async function main() {
 
   if (postId) {
     try {
-      // Use authFetch to get post data
       const post = await getPostById(postId);
       populateForm(post);
     } catch (error) {
-      console.log('Failed to fetch post data. Please try again.');
     }
   }
 }
 
-// Initialize the form with post data
 main();
 
-// Add form submission event listener
 document.getElementById('editPostForm').addEventListener('submit', handleFormSubmit);

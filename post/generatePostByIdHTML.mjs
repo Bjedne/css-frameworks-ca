@@ -1,3 +1,6 @@
+/**
+ * Generates HTML content for a post containing post author, title, body, image, number of likes and comments, an edit button and a delete button.
+ */
 export const generatePostById = (post) => {
     // Adds parent to contain everything
     const postContainer = document.createElement("div");
@@ -39,7 +42,8 @@ export const generatePostById = (post) => {
     removeButton.id = "removeBtn"
 
     actionContainer.append(editLink, removeButton);
-     
+    
+    // If the post being viewed belongs to the user, then the post also displays an edit and delete button. Otherwise the buttons are no longer displayed when viewing another author's post.
     if (username === post.author.name) {
         if (!post.media) {
             postContainer.append(profileName, postTitle, postBody, interactionContainer, actionContainer)

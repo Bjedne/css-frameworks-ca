@@ -7,7 +7,12 @@ function displaySinglePost(post) {
     const postDisplayContainer = document.querySelector("#post-display-container");
     postDisplayContainer.append(generatePostById(post));
 }
-
+/**
+ * The main function for displaying a single post based on the provided post ID.
+ * Retrieves the post information, generates the HTML for the post, and handles
+ * post removal functionality if the logged-in user is the author of the post.
+ * @async
+ */
 async function main() {
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has("id")) {
