@@ -1,6 +1,7 @@
 # MINI TALK
 ## Description
-![image](https://github.com/Bjedne/runeterra5e/assets/126247097/435bf986-fd53-4d2e-9a2e-19780f3ac008)
+![image](https://github.com/NoroffFEU/css-frameworks-ca/assets/126247097/eb0040b3-4f75-4c86-b384-bd7dca413d8f)
+
 MiniTalks is a social platform intended for users with a particular interest for miniature painting to connect, share creations and get inspired.
 
 This project intends for the user to:
