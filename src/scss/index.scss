@@ -15,4 +15,21 @@ $danger:    $brown;
     }
 }
 
+.container {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+} 
+
+p {
+    max-width: 100%;
+}
+
+.black-text {
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

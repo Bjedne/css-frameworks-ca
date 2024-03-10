@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/css/index.css">
+    <meta name="description" content="Edit your post.">
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./edit.mjs" type="module" defer></script>
+    <title>Post | Edit</title>
+</head>
+<body class="bg-info">
+    <header>
+        <nav class="container-fluid bg-danger">
+            <div class="container p-2">
+                <div class="row align-items-center">
+                    <div class="col d-flex justify-content-start order-1">
+                        <img src="/images/mt_logo.png" alt="logo">
+                    </div>
+                <div class="col d-flex justify-content-end order-2 order-lg-3">
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <button class="btn"><a href="../feed/index.html" class="text-decoration-none fw-bold link-dark">MY FEED</a>  </button>
+                    </div>
+                    <button class="btn"><a href="/profile/index.html" class="text-decoration-none fw-bold link-dark">PROFILE</a></button>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Posts body -->
+        <section class="mt-3 col-lg-8 col-11 mx-auto bg-primary pt-3 pb-3 rounded-4" id="allPostContainer">
+            <form class="bg-primary col-lg-8 col-10 align-items-center mx-auto rounded-4 p-4 mt-4" id="editPostForm">
+                <h1>Editing post:</h1>
+
+                <div class="d-flex mb-2 form-group">
+                    <input name="postTitle" type="text" id="postTitle" placeholder="Write a title" class="form-control mx-4"></input>
+                </div>
+
+                <div class="d-flex">
+                    <textarea name="postBody" id="postBody" placeholder="Tell us what you created!" class="form-control mx-4"></textarea>
+                </div>
+
+                <div class="mt-3 d-flex mx-3">
+                    <input class="form-control mx-2" type="url" id="formFile" placeholder="Insert image link">
+                  </div>
+
+                <button class="btn btn-danger justify-self-center mx-auto d-flex mt-3 px-5">Update post</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

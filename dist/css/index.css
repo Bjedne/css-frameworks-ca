@@ -7,6 +7,23 @@
   max-height: 100px;
 }
 
+.container {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+p {
+  max-width: 100%;
+}
+
+.black-text {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
